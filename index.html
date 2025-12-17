@@ -9,21 +9,18 @@
     <style>
         body { font-family: 'Fauna One', sans-serif; background-color: #0a0a0a; }
         .font-cinzel { font-family: 'Cinzel', serif; }
-        
-        /* Tekstur kertas kuno halus */
+
         .parchment-overlay {
             background-image: url('https://www.transparenttextures.com/patterns/p6.png');
             pointer-events: none;
             opacity: 0.15;
         }
 
-        /* Animasi pendaran emas */
         .gold-glow:hover {
             box-shadow: 0 0 30px rgba(197, 160, 89, 0.4);
             text-shadow: 0 0 8px rgba(244, 228, 188, 0.6);
         }
 
-        /* Animasi fade in untuk konten */
         .fade-in {
             animation: fadeIn 2s ease-out;
         }
@@ -51,31 +48,33 @@
     </nav>
 
     <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        
+
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-black/40 z-10"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50 z-10"></div>
-            
+
+            <!-- VIDEO LOKAL -->
             <video 
                 autoplay 
                 muted 
                 loop 
                 playsinline 
+                preload="auto"
                 class="w-full h-full object-cover scale-105"
             >
-                <source src="https://cdn-hogwartslegacy.warnerbrosgames.com/home/hero-m.mp4?c=b" type="video/mp4">
-                Your browser does not support the video tag.
+                <source src="trailer.mp4" type="video/mp4">
+                Browser kamu tidak mendukung video.
             </video>
         </div>
 
         <div class="relative z-20 text-center px-4 fade-in">
             <h2 class="text-[#c5a059] tracking-[0.4em] uppercase text-xs md:text-sm mb-6 drop-shadow-lg">A New Legend Awaits</h2>
-            
+
             <h1 class="text-5xl md:text-8xl font-cinzel font-bold mb-8 tracking-tight leading-tight">
-                WRITE THE <br> 
+                WRITE THE <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-b from-[#f4e4bc] to-[#c5a059]">UNWRITTEN</span>
             </h1>
-            
+
             <p class="text-sm md:text-lg text-[#f4e4bc]/90 mb-12 max-w-xl mx-auto leading-relaxed italic">
                 "Your journey at Hogwarts begins not in the pages of history, but in the choices you make today."
             </p>
