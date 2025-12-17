@@ -29,71 +29,98 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        .trailer-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        .trailer-modal:target {
+            display: flex;
+        }
     </style>
 </head>
+
 <body class="text-[#f4e4bc] overflow-x-hidden">
 
-    <div class="fixed inset-0 parchment-overlay z-50"></div>
+<div class="fixed inset-0 parchment-overlay z-50"></div>
 
-    <nav class="absolute top-0 w-full z-40 flex justify-between items-center px-6 md:px-12 py-8 bg-gradient-to-b from-black/80 to-transparent">
-        <div class="text-xl md:text-2xl font-cinzel font-bold tracking-[0.2em] text-[#c5a059]">HOGWARTS LEGACY</div>
-        <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em]">
-            <a href="#" class="hover:text-[#c5a059] transition duration-500">The World</a>
-            <a href="#" class="hover:text-[#c5a059] transition duration-500">Classes</a>
-            <a href="#" class="hover:text-[#c5a059] transition duration-500">Mysteries</a>
+<nav class="absolute top-0 w-full z-40 flex justify-between items-center px-6 md:px-12 py-8 bg-gradient-to-b from-black/80 to-transparent">
+    <div class="text-xl md:text-2xl font-cinzel font-bold tracking-[0.2em] text-[#c5a059]">
+        HOGWARTS LEGACY
+    </div>
+    <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em]">
+        <a href="#" class="hover:text-[#c5a059] transition duration-500">The World</a>
+        <a href="#" class="hover:text-[#c5a059] transition duration-500">Classes</a>
+        <a href="#" class="hover:text-[#c5a059] transition duration-500">Mysteries</a>
+    </div>
+    <button class="border border-[#c5a059]/50 px-5 py-2 text-[10px] tracking-widest font-cinzel hover:bg-[#c5a059] hover:text-black transition-all duration-500">
+        PURCHASE NOW
+    </button>
+</nav>
+
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50 z-10"></div>
+
+        <video autoplay muted loop playsinline class="w-full h-full object-cover scale-105">
+            <source src="https://cdn-hogwartslegacy.warnerbrosgames.com/home/hero-m.mp4?c=b" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="relative z-20 text-center px-4 fade-in">
+        <h2 class="text-[#c5a059] tracking-[0.4em] uppercase text-xs md:text-sm mb-6">
+            A New Legend Awaits
+        </h2>
+
+        <h1 class="text-5xl md:text-8xl font-cinzel font-bold mb-8 leading-tight">
+            WRITE THE <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-b from-[#f4e4bc] to-[#c5a059]">
+                UNWRITTEN
+            </span>
+        </h1>
+
+        <p class="text-sm md:text-lg text-[#f4e4bc]/90 mb-12 max-w-xl mx-auto italic">
+            "Your journey at Hogwarts begins not in the pages of history, but in the choices you make today."
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
+            <button class="gold-glow bg-[#c5a059] text-black font-cinzel font-bold py-5 px-12 tracking-widest">
+                DISCOVER YOUR HOUSE
+            </button>
+
+            <a href="#trailer"
+               class="flex items-center gap-4 font-cinzel text-sm hover:text-[#c5a059] transition">
+                <span class="w-8 h-[1px] bg-[#c5a059]"></span>
+                WATCH TRAILER
+            </a>
         </div>
-        <button class="border border-[#c5a059]/50 px-5 py-2 text-[10px] tracking-widest font-cinzel hover:bg-[#c5a059] hover:text-black transition-all duration-500">
-            PURCHASE NOW
-        </button>
-    </nav>
+    </div>
 
-    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 opacity-60">
+        <div class="w-[1px] h-16 bg-gradient-to-b from-[#c5a059] to-transparent"></div>
+    </div>
+</section>
 
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-black/40 z-10"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50 z-10"></div>
+<div id="trailer" class="trailer-modal">
+    <a href="#" class="absolute top-6 right-6 text-[#c5a059] text-3xl font-bold">✕</a>
 
-            <!-- VIDEO LOKAL -->
-            <video 
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                preload="auto"
-                class="w-full h-full object-cover scale-105"
-            >
-                <source src="trailer.mp4" type="video/mp4">
-                Browser kamu tidak mendukung video.
-            </video>
-        </div>
-
-        <div class="relative z-20 text-center px-4 fade-in">
-            <h2 class="text-[#c5a059] tracking-[0.4em] uppercase text-xs md:text-sm mb-6 drop-shadow-lg">A New Legend Awaits</h2>
-
-            <h1 class="text-5xl md:text-8xl font-cinzel font-bold mb-8 tracking-tight leading-tight">
-                WRITE THE <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-b from-[#f4e4bc] to-[#c5a059]">UNWRITTEN</span>
-            </h1>
-
-            <p class="text-sm md:text-lg text-[#f4e4bc]/90 mb-12 max-w-xl mx-auto leading-relaxed italic">
-                "Your journey at Hogwarts begins not in the pages of history, but in the choices you make today."
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
-                <button class="gold-glow group bg-[#c5a059] text-black font-cinzel font-bold py-5 px-12 tracking-widest transition-all duration-500">
-                    DISCOVER YOUR HOUSE
-                </button>
-                <button class="group flex items-center gap-4 font-cinzel text-sm text-[#f4e4bc] hover:text-[#c5a059] transition duration-500">
-                    <span class="w-8 h-[1px] bg-[#c5a059]"></span>
-                    EXPLORE THE CASTLE
-                </button>
-            </div>
-        </div>
-
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 opacity-60">
-            <div class="w-[1px] h-16 bg-gradient-to-b from-[#c5a059] to-transparent mx-auto"></div>
-        </div>
-    </section>
+    <iframe
+        class="w-[90%] max-w-4xl aspect-video rounded-lg shadow-2xl"
+        src="https://www.youtube.com/embed/ebvd8el3S9w"
+        title="Hogwarts Legacy Trailer"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
 
 </body>
 </html>
